@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>*{margin:0;box-sizing:border-box}body{background:var(--paper);padding:24px;font-family:var(--font-body)}
+.row{display:flex;gap:26px;align-items:center}
+.ic{display:flex;flex-direction:column;align-items:center;gap:8px}
+.ic svg{width:30px;height:30px;color:var(--fg2);stroke-width:1.9}
+.ic.b svg{color:var(--brand)}
+.lbl{font-family:var(--font-mono);font-size:10px;color:var(--fg3)}</style>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script></head>
+<body>
+<div class="row">
+<div class="ic b"><i data-lucide="settings"></i><span class="lbl">cog</span></div>
+<div class="ic"><i data-lucide="wrench"></i><span class="lbl">wrench</span></div>
+<div class="ic"><i data-lucide="hard-hat"></i><span class="lbl">hard-hat</span></div>
+<div class="ic"><i data-lucide="clipboard-check"></i><span class="lbl">maintenance</span></div>
+<div class="ic"><i data-lucide="truck"></i><span class="lbl">logistics</span></div>
+<div class="ic"><i data-lucide="factory"></i><span class="lbl">plant</span></div>
+<div class="ic"><i data-lucide="phone"></i><span class="lbl">phone</span></div>
+<div class="ic"><i data-lucide="map-pin"></i><span class="lbl">location</span></div>
+</div>
+<div style="margin-top:18px;font-family:var(--font-mono);font-size:12px;color:var(--fg2)">Lucide · line · ~1.9px stroke <span style="color:var(--fg3)">(substitution — see README)</span></div>
+<script>lucide.createIcons()</script>
+</body></html>

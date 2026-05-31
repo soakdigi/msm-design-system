@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);font-family:var(--font-body);color:var(--fg1)}
+body{padding:22px 24px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.col{display:flex;flex-direction:column;gap:4px}
+.lbl{font-family:var(--font-mono);font-size:11px;color:var(--fg3);letter-spacing:.02em}
+.sw{height:54px;border-radius:var(--r-sm);border:1px solid rgba(0,0,0,.06)}
+label{font-size:13px;font-weight:600;color:var(--fg2);display:block;margin-bottom:6px}
+input,select{font-family:var(--font-body);font-size:15px;padding:11px 13px;border:1px solid var(--border-strong);border-radius:var(--r-sm);background:var(--white);color:var(--fg1);width:100%}
+input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--orange-100)}
+</style></head><body>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:560px">
+<div><label>Your name</label><input value="Production Manager"></div>
+<div><label>Phone</label><input placeholder="(+613) ..." style="border-color:var(--brand);box-shadow:0 0 0 3px var(--orange-100)"></div>
+</div></body></html>

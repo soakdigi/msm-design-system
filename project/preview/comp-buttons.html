@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);font-family:var(--font-display);color:var(--fg1)}
+body{padding:26px 24px;display:flex;flex-direction:column;gap:20px}
+.row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+svg{stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke:currentColor;width:20px;height:20px}
+.lbl{font-family:var(--font-mono);font-size:11px;color:var(--fg3);width:64px;flex:none}
+
+/* Impactful CTA — badge arrow */
+.cta{display:inline-flex;align-items:center;gap:20px;border:none;cursor:pointer;border-radius:var(--r-md);
+  padding:9px 9px 9px 28px;background:var(--brand);color:#fff;box-shadow:var(--shadow-brand);
+  transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s,background .2s}
+.cta .lab{font-weight:700;font-size:15px;letter-spacing:.13em;text-transform:uppercase}
+.cta .cap{width:48px;height:48px;border-radius:var(--r-sm);background:rgba(20,12,8,.22);
+  display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.cta .cap svg{transition:transform .25s cubic-bezier(.2,.7,.3,1)}
+.cta.hov{transform:translateY(-3px);box-shadow:0 16px 34px rgba(240,90,60,.42)}
+.cta.hov .cap{background:rgba(20,12,8,.34)}
+.cta.hov .cap svg{transform:translateX(4px)}
+.cta.dark{background:var(--warm-850);box-shadow:var(--shadow-lg)}
+.cta.dark .cap{background:var(--brand)}
+.cta.dark.hov{box-shadow:0 16px 34px rgba(28,25,22,.4)}
+
+/* Secondary — outline, machined */
+.btn{display:inline-flex;align-items:center;gap:11px;font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;border-radius:var(--r-md);padding:15px 24px;border:1.5px solid var(--warm-850);background:transparent;color:var(--warm-850);transition:background .18s,color .18s}
+.btn.hov{background:var(--warm-850);color:#fff}
+.btn svg{width:17px;height:17px}
+
+/* Ghost / link */
+.ghost{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:14px;color:var(--brand-ink);text-transform:uppercase;letter-spacing:.12em;background:none;border:none;cursor:pointer;padding:6px 0;position:relative}
+.ghost .ul{position:absolute;left:0;bottom:0;height:2px;background:var(--brand);width:0;transition:width .25s}
+.ghost.hov .ul{width:calc(100% - 28px)}
+
+.cap-c{font-family:var(--font-mono);font-size:11px;color:var(--fg3);margin-top:2px}
+</style></head><body>
+<div class="row"><span class="lbl">Default</span>
+  <button class="cta"><span class="lab">Get In Touch</span><span class="cap"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></button>
+  <button class="cta dark"><span class="lab">Our Services</span><span class="cap"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></button>
+  <button class="btn">Request a quote</button>
+  <button class="ghost">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span class="ul"></span></button>
+</div>
+<div class="row"><span class="lbl">Hover</span>
+  <button class="cta hov"><span class="lab">Get In Touch</span><span class="cap"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></button>
+  <button class="cta dark hov"><span class="lab">Our Services</span><span class="cap"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></button>
+  <button class="btn hov">Request a quote</button>
+  <button class="ghost hov">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span class="ul"></span></button>
+</div>
+</body></html>

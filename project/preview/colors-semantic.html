@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);font-family:var(--font-body);color:var(--fg1)}
+body{padding:22px 24px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.col{display:flex;flex-direction:column;gap:4px}
+.lbl{font-family:var(--font-mono);font-size:11px;color:var(--fg3);letter-spacing:.02em}
+.sw{height:54px;border-radius:var(--r-sm);border:1px solid rgba(0,0,0,.06)}
+.tok{display:flex;align-items:center;gap:10px}.dot{width:34px;height:34px;border-radius:var(--r-sm);border:1px solid rgba(0,0,0,.07);flex:none}
+</style></head><body>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 26px">
+
+<div class="tok"><div class="dot" style="background:var(--bg)"></div><div><div style="font-weight:600;font-size:13px">bg</div><div class="lbl">--bg</div></div></div>
+<div class="tok"><div class="dot" style="background:var(--bg-raised)"></div><div><div style="font-weight:600;font-size:13px">bg-raised</div><div class="lbl">--bg-raised</div></div></div>
+<div class="tok"><div class="dot" style="background:var(--bg-inverse)"></div><div><div style="font-weight:600;font-size:13px">bg-inverse</div><div class="lbl">--bg-inverse</div></div></div>
+<div class="tok"><div class="dot" style="background:var(--fg1)"></div><div><div style="font-weight:600;font-size:13px">fg1</div><div class="lbl">--fg1</div></div></div>
+<div class="tok"><div class="dot" style="background:var(--fg2)"></div><div><div style="font-weight:600;font-size:13px">fg2</div><div class="lbl">--fg2</div></div></div>
+<div class="tok"><div class="dot" style="background:var(--fg3)"></div><div><div style="font-weight:600;font-size:13px">fg3</div><div class="lbl">--fg3</div></div></div>
+<div class="tok"><div class="dot" style="background:var(--brand)"></div><div><div style="font-weight:600;font-size:13px">brand</div><div class="lbl">--brand</div></div></div>
+<div class="tok"><div class="dot" style="background:var(--border)"></div><div><div style="font-weight:600;font-size:13px">border</div><div class="lbl">--border</div></div></div>
+</div></body></html>

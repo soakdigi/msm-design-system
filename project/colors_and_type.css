@@ -1,0 +1,188 @@
+/* ============================================================
+   MSM — Machinery Solutions & Maintenance
+   Colors & Type foundations
+   Brand fonts (Google Fonts): Raleway (display/headings) + Manrope (body/UI)
+   Technical accent: IBM Plex Mono
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Raleway:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------- Brand palette ---------- */
+  /* Signal Orange — the MSM gear / primary action color */
+  --orange-50:  #fdeee9;
+  --orange-100: #fbd8cd;
+  --orange-200: #f7b3a0;
+  --orange-300: #f48d73;
+  --orange-400: #f27457;
+  --orange-500: #f05a3c;   /* BRAND PRIMARY — rgb(240, 90, 60) */
+  --orange-600: #d84a2e;
+  --orange-700: #b23a22;
+  --orange-800: #872c1a;
+  --orange-900: #5c1d11;
+
+  /* Warm Graphite — dark warm grey (from the logo lockup) */
+  --warm-950: #1c1916;
+  --warm-900: #221e1a;
+  --warm-850: #2b2622;   /* logo ground / primary dark surface */
+  --warm-800: #38322c;
+  --warm-700: #4a433b;
+  --warm-600: #635a50;
+  --warm-500: #837868;
+  --warm-400: #a89d8d;
+  --warm-300: #c8bfb2;
+
+  /* Warm Linen — soft warm greys with a hint of orange (light surfaces) */
+  --linen-200: #ded5c9;
+  --linen-150: #e8e0d6;
+  --linen-100: #f1ebe2;
+  --linen-50:  #f7f3ec;
+  --paper:     #faf7f1;   /* default page background */
+  --white:     #ffffff;
+
+  /* ---------- Semantic surface / ink tokens ---------- */
+  --bg:          var(--paper);
+  --bg-raised:   var(--white);
+  --bg-sunken:   var(--linen-100);
+  --bg-inverse:  var(--warm-850);
+
+  --fg1: var(--warm-950);   /* primary text */
+  --fg2: var(--warm-700);   /* secondary text */
+  --fg3: var(--warm-500);   /* muted / captions */
+  --fg-inverse:   #f4efe7;  /* text on dark */
+  --fg-inverse-2: #b9b0a3;  /* secondary on dark */
+
+  --brand:       var(--orange-500);
+  --brand-press: var(--orange-600);
+  --brand-ink:   var(--orange-700);  /* orange text on light, readable */
+  --on-brand:    #ffffff;
+
+  --border:        #e4dbcf;
+  --border-strong: #cabfb0;
+  --border-dark:   #46403a;  /* borders on dark surfaces */
+
+  /* ---------- Status ---------- */
+  --ok:    #3f7d52;   --ok-bg:    #e6efe6;
+  --warn:  #c8881f;   --warn-bg:  #fbeed2;
+  --danger:#c0392b;   --danger-bg:#f9e2de;
+  --info:  #2f6a86;   --info-bg:  #e2eef3;
+
+  /* ---------- Radii ---------- */
+  --r-xs: 3px;
+  --r-sm: 5px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 18px;
+  --r-pill: 999px;
+
+  /* ---------- Spacing scale (4px base) ---------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-9: 96px; --s-10: 128px;
+
+  /* ---------- Elevation ---------- */
+  --shadow-sm: 0 1px 2px rgba(28,25,22,.08), 0 1px 1px rgba(28,25,22,.04);
+  --shadow-md: 0 4px 14px rgba(28,25,22,.10), 0 1px 3px rgba(28,25,22,.06);
+  --shadow-lg: 0 18px 40px rgba(28,25,22,.16), 0 4px 12px rgba(28,25,22,.08);
+  --shadow-brand: 0 10px 24px rgba(240,90,60,.30);
+
+  /* ---------- Type families ---------- */
+  --font-display: 'Raleway', system-ui, sans-serif;
+  --font-body:    'Manrope', system-ui, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* ---------- Motion ---------- */
+  --ease: cubic-bezier(.2,.7,.3,1);
+  --ease-out: cubic-bezier(.16,.84,.44,1);
+  --dur-fast: .14s;
+  --dur: .24s;
+  --dur-slow: .4s;
+}
+
+/* ============================================================
+   Type scale — semantic
+   Headings: Raleway, tight-ish, the brand voice
+   Eyebrow / labels: uppercase, wide tracking (echoes the wordmark)
+   ============================================================ */
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+}
+
+/* Headings run LIGHT (Raleway 300/400) to echo the thin wide-tracked wordmark. */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(40px, 5.2vw, 68px);
+  line-height: 1.04;
+  letter-spacing: -.01em;
+  color: var(--fg1);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -.005em;
+  color: var(--fg1);
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.18;
+  color: var(--fg1);
+}
+
+h4, .h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.25;
+  color: var(--fg1);
+}
+
+.lead {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--fg2);
+}
+
+p, .body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--fg2);
+}
+
+.small {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--fg3);
+}
+
+.mono, code, .spec {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: .01em;
+  color: var(--fg1);
+}
+
+/* The wordmark treatment — wide-tracked light caps, as in the logo */
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: .26em;
+}

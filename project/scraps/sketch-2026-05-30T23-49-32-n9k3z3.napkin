@@ -1,0 +1,297 @@
+{
+  "version": 1,
+  "created": "2026-05-30T23:49:32.209Z",
+  "modified": "2026-05-30T23:55:47.426Z",
+  "objects": [
+    {
+      "id": "4ipmqv00i",
+      "type": "rect",
+      "x": 507,
+      "y": 163,
+      "width": 614,
+      "height": 320,
+      "data": {
+        "fill": null,
+        "stroke": "#8B2500",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "xjnw2vo0w",
+      "type": "text",
+      "x": 738.5,
+      "y": 321.5,
+      "data": {
+        "content": "\nDriving your production further",
+        "fontSize": 16,
+        "color": "#8B2500",
+        "bold": false
+      },
+      "width": 155,
+      "height": 63
+    },
+    {
+      "id": "rkn0k5gly",
+      "type": "rect",
+      "x": 507,
+      "y": 484,
+      "width": 615,
+      "height": 1754,
+      "data": {
+        "fill": null,
+        "stroke": "#8B2500",
+        "strokeWidth": 2,
+        "text": ""
+      }
+    },
+    {
+      "id": "u9a3i9e2h",
+      "type": "text",
+      "x": 736,
+      "y": 527.5,
+      "data": {
+        "content": "What We Do",
+        "fontSize": 16,
+        "color": "#8B2500",
+        "bold": false
+      },
+      "width": 91,
+      "height": 21
+    },
+    {
+      "id": "utz7b0dyq",
+      "type": "text",
+      "x": 590,
+      "y": 568,
+      "data": {
+        "content": "At Machinery Solutions & Maintenance, our aim is to provide high quality services for our clients in all fields in the manufacturing industry.",
+        "fontSize": 16,
+        "color": "#8B2500",
+        "bold": false
+      },
+      "width": 388,
+      "height": 63
+    },
+    {
+      "id": "yad4ycaie",
+      "type": "text",
+      "x": 541,
+      "y": 797.5,
+      "data": {
+        "content": "Machinery Breakdown Service\nWe are on call to help you get back online and minimise your production down time, with our experience and expertise in mechanical, electrical, pneumatic and hydraulic systems.",
+        "fontSize": 16,
+        "color": "#8B2500",
+        "bold": false
+      },
+      "width": 273,
+      "height": 125
+    },
+    {
+      "id": "yb3ut0xbv",
+      "type": "sticky",
+      "x": 883,
+      "y": 769,
+      "width": 150,
+      "height": 150,
+      "data": {
+        "content": "Image",
+        "color": "yellow"
+      }
+    },
+    {
+      "id": "sfmyzoxvu",
+      "type": "text",
+      "x": 816,
+      "y": 1020.5,
+      "data": {
+        "content": "Periodical Preventative Maintenance\nWe can put in place a tailor-made maintenance plan designed to suit your company’s needs, resulting in reduced down time and preventing costly and time consuming breakdowns.",
+        "fontSize": 16,
+        "color": "#8B2500",
+        "bold": false
+      },
+      "width": 273,
+      "height": 146
+    },
+    {
+      "id": "tml2vxlsy",
+      "type": "sticky",
+      "x": 577,
+      "y": 991,
+      "width": 150,
+      "height": 150,
+      "data": {
+        "content": "Image",
+        "color": "yellow"
+      }
+    },
+    {
+      "id": "wfdcrbr77",
+      "type": "text",
+      "x": 542,
+      "y": 1255.5,
+      "data": {
+        "content": "Design & Development\nUsing 3D modelling and CAD software, we have the ability to design just about anything from one off parts to full assemblies. This service includes complete machine builds from the concept through to the fabrication, redesign of components already on your machine to improve operation and accuracy for production, and retro fitting add on components and assemblies to improve your capabilities and work flow, as well as OH&S upgrades, one off parts and even prototyping.",
+        "fontSize": 16,
+        "color": "#8B2500",
+        "bold": false
+      },
+      "width": 273,
+      "height": 312
+    },
+    {
+      "id": "em98j95a3",
+      "type": "sticky",
+      "x": 914,
+      "y": 1244,
+      "width": 150,
+      "height": 150,
+      "data": {
+        "content": "Image",
+        "color": "yellow"
+      }
+    },
+    {
+      "id": "04l9nar7c",
+      "type": "text",
+      "x": 832,
+      "y": 1667.5,
+      "data": {
+        "content": "Machinery Installation,\nCommissioning & Relocation\nJust brought a machine or looking to relocate your existing machines to a new location within your factory to optimise floor space and production?\n\nWith effective planning to minimise down time, we at MSM do it with ease, as we provide all the necessary services such as floor plan layouts, power requirements and the lifting equipment needed.",
+        "fontSize": 16,
+        "color": "#8B2500",
+        "bold": false
+      },
+      "width": 273,
+      "height": 271
+    },
+    {
+      "id": "b5kguk1ia",
+      "type": "sticky",
+      "x": 593,
+      "y": 1638,
+      "width": 150,
+      "height": 150,
+      "data": {
+        "content": "Image",
+        "color": "yellow"
+      }
+    },
+    {
+      "id": "k4oi2p0x4",
+      "type": "text",
+      "x": 550,
+      "y": 2017.5,
+      "data": {
+        "content": "\nSpare Parts\nUsing our local and world-wide network of suppliers, we can source the components and consumables that are needed to keep your business running at maximum efficiency.",
+        "fontSize": 16,
+        "color": "#8B2500",
+        "bold": false
+      },
+      "width": 273,
+      "height": 167
+    },
+    {
+      "id": "duxp89dhb",
+      "type": "sticky",
+      "x": 922,
+      "y": 2006,
+      "width": 150,
+      "height": 150,
+      "data": {
+        "content": "Image",
+        "color": "yellow"
+      }
+    },
+    {
+      "id": "kydzlyooc",
+      "type": "rect",
+      "x": 506.9999999999999,
+      "y": 2239,
+      "width": 618.0000000000001,
+      "height": 334,
+      "data": {
+        "fill": null,
+        "stroke": "#8B2500",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "jzlr5i85e",
+      "type": "text",
+      "x": 702,
+      "y": 2329.5,
+      "data": {
+        "content": "Why MSM?\nMachinery Solutions & Maintenance has established a history of excellence. Our specialised staff are exceedingly gifted and dedicated to help you recognise your company’s equipment servicing demands, with experience in the printing, packaging, furniture & timber industries.",
+        "fontSize": 16,
+        "color": "#8B2500",
+        "bold": false
+      },
+      "width": 273,
+      "height": 188
+    },
+    {
+      "id": "opwud8h5k",
+      "type": "sticky",
+      "x": 1068,
+      "y": 2280,
+      "width": 150,
+      "height": 150,
+      "data": {
+        "content": "Full image backgound",
+        "color": "yellow"
+      }
+    },
+    {
+      "id": "wqpy6tfcs",
+      "type": "rect",
+      "x": 516.9999999999999,
+      "y": 2577,
+      "width": 618.0000000000001,
+      "height": 334,
+      "data": {
+        "fill": null,
+        "stroke": "#8B2500",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "dsgbjhsfx",
+      "type": "text",
+      "x": 578,
+      "y": 2661.5,
+      "data": {
+        "content": "Get In Touch\nFind about more about our services, our friendly team members are always happy to talk.\n\n(+613) 9013 3772\n25A Slater Parade,\nKeilor East 3033\nGet Directions",
+        "fontSize": 16,
+        "color": "#8B2500",
+        "bold": false
+      },
+      "width": 273,
+      "height": 188
+    },
+    {
+      "id": "g15iykce9",
+      "type": "rect",
+      "x": 558.9999999999999,
+      "y": 2631,
+      "width": 310,
+      "height": 246,
+      "data": {
+        "fill": null,
+        "stroke": "#8B2500",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "id": "tcfy2ye8x",
+      "type": "sticky",
+      "x": 1060,
+      "y": 2692,
+      "width": 150,
+      "height": 150,
+      "data": {
+        "content": "Google Maps Bacgfournd",
+        "color": "yellow"
+      }
+    }
+  ]
+}

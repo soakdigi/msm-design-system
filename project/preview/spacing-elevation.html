@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);font-family:var(--font-body);color:var(--fg1)}
+body{padding:22px 24px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.col{display:flex;flex-direction:column;gap:4px}
+.lbl{font-family:var(--font-mono);font-size:11px;color:var(--fg3);letter-spacing:.02em}
+.sw{height:54px;border-radius:var(--r-sm);border:1px solid rgba(0,0,0,.06)}
+.e{width:150px;height:84px;background:var(--white);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;color:var(--fg2);border:1px solid var(--border)}
+</style></head><body>
+<div class="row" style="gap:22px">
+<div class="e" style="box-shadow:var(--shadow-sm)">sm</div>
+<div class="e" style="box-shadow:var(--shadow-md)">md</div>
+<div class="e" style="box-shadow:var(--shadow-lg)">lg</div>
+<div class="e" style="box-shadow:var(--shadow-brand);border-color:var(--orange-200)">brand</div>
+</div></body></html>

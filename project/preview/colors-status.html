@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);font-family:var(--font-body);color:var(--fg1)}
+body{padding:22px 24px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.col{display:flex;flex-direction:column;gap:4px}
+.lbl{font-family:var(--font-mono);font-size:11px;color:var(--fg3);letter-spacing:.02em}
+.sw{height:54px;border-radius:var(--r-sm);border:1px solid rgba(0,0,0,.06)}
+.chip{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border-radius:var(--r-md);border:1px solid var(--border)}
+</style></head><body>
+<div class="row" style="gap:14px">
+
+<div class="chip" style="background:var(--ok-bg);min-width:130px">
+<span style="font-weight:700;color:var(--ok);font-size:14px">Success</span>
+<span class="lbl" style="color:var(--ok)">ok</span></div>
+<div class="chip" style="background:var(--warn-bg);min-width:130px">
+<span style="font-weight:700;color:var(--warn);font-size:14px">Warning</span>
+<span class="lbl" style="color:var(--warn)">warn</span></div>
+<div class="chip" style="background:var(--danger-bg);min-width:130px">
+<span style="font-weight:700;color:var(--danger);font-size:14px">Down / Error</span>
+<span class="lbl" style="color:var(--danger)">danger</span></div>
+<div class="chip" style="background:var(--info-bg);min-width:130px">
+<span style="font-weight:700;color:var(--info);font-size:14px">Info</span>
+<span class="lbl" style="color:var(--info)">info</span></div>
+</div></body></html>
