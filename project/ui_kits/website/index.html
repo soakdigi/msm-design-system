@@ -5,10 +5,304 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MSM — Machinery Solutions &amp; Maintenance</title>
 <link rel="icon" type="image/png" href="../../assets/logo/msm-mark-light.png">
-<link rel="stylesheet" href="../../colors_and_type.css">
-<link rel="stylesheet" href="site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Raleway:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
-/* Mobile nav drawer (kit-local) */
+/* ============================================================
+   MSM — Colors & Type foundations
+   ============================================================ */
+:root {
+  --orange-50:  #fdeee9;
+  --orange-100: #fbd8cd;
+  --orange-200: #f7b3a0;
+  --orange-300: #f48d73;
+  --orange-400: #f27457;
+  --orange-500: #f05a3c;
+  --orange-600: #d84a2e;
+  --orange-700: #b23a22;
+  --orange-800: #872c1a;
+  --orange-900: #5c1d11;
+
+  --warm-950: #1c1916;
+  --warm-900: #221e1a;
+  --warm-850: #2b2622;
+  --warm-800: #38322c;
+  --warm-700: #4a433b;
+  --warm-600: #635a50;
+  --warm-500: #837868;
+  --warm-400: #a89d8d;
+  --warm-300: #c8bfb2;
+
+  --linen-200: #ded5c9;
+  --linen-150: #e8e0d6;
+  --linen-100: #f1ebe2;
+  --linen-50:  #f7f3ec;
+  --paper:     #faf7f1;
+  --white:     #ffffff;
+
+  --bg:          var(--paper);
+  --bg-raised:   var(--white);
+  --bg-sunken:   var(--linen-100);
+  --bg-inverse:  var(--warm-850);
+
+  --fg1: var(--warm-950);
+  --fg2: var(--warm-700);
+  --fg3: var(--warm-500);
+  --fg-inverse:   #f4efe7;
+  --fg-inverse-2: #b9b0a3;
+
+  --brand:       var(--orange-500);
+  --brand-press: var(--orange-600);
+  --brand-ink:   var(--orange-700);
+  --on-brand:    #ffffff;
+
+  --border:        #e4dbcf;
+  --border-strong: #cabfb0;
+  --border-dark:   #46403a;
+
+  --ok:    #3f7d52;   --ok-bg:    #e6efe6;
+  --warn:  #c8881f;   --warn-bg:  #fbeed2;
+  --danger:#c0392b;   --danger-bg:#f9e2de;
+  --info:  #2f6a86;   --info-bg:  #e2eef3;
+
+  --r-xs: 3px;
+  --r-sm: 5px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 18px;
+  --r-pill: 999px;
+
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-9: 96px; --s-10: 128px;
+
+  --shadow-sm: 0 1px 2px rgba(28,25,22,.08), 0 1px 1px rgba(28,25,22,.04);
+  --shadow-md: 0 4px 14px rgba(28,25,22,.10), 0 1px 3px rgba(28,25,22,.06);
+  --shadow-lg: 0 18px 40px rgba(28,25,22,.16), 0 4px 12px rgba(28,25,22,.08);
+  --shadow-brand: 0 10px 24px rgba(240,90,60,.30);
+
+  --font-display: 'Raleway', system-ui, sans-serif;
+  --font-body:    'Manrope', system-ui, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+
+  --ease: cubic-bezier(.2,.7,.3,1);
+  --ease-out: cubic-bezier(.16,.84,.44,1);
+  --dur-fast: .14s;
+  --dur: .24s;
+  --dur-slow: .4s;
+}
+
+/* ---- Type scale ---- */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+}
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(40px, 5.2vw, 68px);
+  line-height: 1.04;
+  letter-spacing: -.01em;
+  color: var(--fg1);
+}
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -.005em;
+  color: var(--fg1);
+}
+h3, .h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.18;
+  color: var(--fg1);
+}
+h4, .h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.25;
+  color: var(--fg1);
+}
+.lead {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--fg2);
+}
+p, .body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--fg2);
+}
+.small {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--fg3);
+}
+.mono, code, .spec {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: .01em;
+  color: var(--fg1);
+}
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: .26em;
+}
+
+/* ============================================================
+   MSM marketing website — site styles
+   ============================================================ */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--fg1);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+
+/* ---------- Header ---------- */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;transition:background var(--dur) var(--ease),box-shadow var(--dur) var(--ease),border-color var(--dur)}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;height:84px}
+.hdr::after{content:"";position:absolute;inset:0;border-bottom:1px solid transparent;pointer-events:none;transition:border-color var(--dur)}
+.hdr.scrolled{background:rgba(250,247,241,.85);backdrop-filter:blur(14px);box-shadow:var(--shadow-sm)}
+.hdr.scrolled::after{border-bottom-color:var(--border)}
+.hdr-logo{height:52px;transition:height var(--dur) var(--ease)}
+.hdr.scrolled .hdr-logo.is-mark{height:40px}
+.nav{display:flex;align-items:center;gap:38px}
+.nav a{font-family:var(--font-display);font-weight:600;font-size:15px;color:rgba(255,255,255,.82);position:relative;padding:4px 0;transition:color var(--dur-fast)}
+.nav a:hover{color:#fff}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-3px;height:2px;background:var(--brand);transition:right var(--dur) var(--ease)}
+.nav a:hover::after{right:0}
+.hdr.scrolled .nav a{color:var(--fg2)}
+.hdr.scrolled .nav a:hover{color:var(--fg1)}
+.hdr-cta{display:flex;align-items:center;gap:14px}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;color:#fff}
+.hdr.scrolled .menu-btn{color:var(--fg1)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:600;font-size:15px;cursor:pointer;border-radius:var(--r-sm);padding:13px 24px;border:1px solid transparent;transition:background var(--dur-fast),transform var(--dur-fast),box-shadow var(--dur-fast),border-color var(--dur-fast),color var(--dur-fast);white-space:nowrap}
+.btn svg{width:18px;height:18px}
+.btn-ghost-light{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.12em;font-weight:700;font-size:14px}
+.btn-ghost-light:hover{background:#fff;color:var(--warm-850);border-color:#fff}
+.btn-ghost-light:active{transform:translateY(1px)}
+
+/* Signature CTA — badge arrow */
+.cta{display:inline-flex;align-items:center;gap:20px;border:none;cursor:pointer;border-radius:var(--r-md);
+  padding:9px 9px 9px 28px;background:var(--brand);color:#fff;box-shadow:var(--shadow-brand);font-family:var(--font-display);
+  transition:transform .2s var(--ease),box-shadow .2s,background .2s}
+.cta .lab{font-weight:700;font-size:15px;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}
+.cta .cap{width:48px;height:48px;border-radius:var(--r-sm);background:rgba(20,12,8,.22);
+  display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.cta .cap svg{width:20px;height:20px;transition:transform .25s var(--ease)}
+.cta:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(240,90,60,.42)}
+.cta:hover .cap{background:rgba(20,12,8,.34)}
+.cta:hover .cap svg{transform:translateX(4px)}
+.cta:active{transform:translateY(0);box-shadow:var(--shadow-sm)}
+.cta-sm{padding:6px 6px 6px 22px;gap:14px}
+.cta-sm .lab{font-size:13px;letter-spacing:.12em}
+.cta-sm .cap{width:38px;height:38px}
+.cta-sm .cap svg{width:17px;height:17px}
+
+/* ---------- Hero (full-bleed) ---------- */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;padding:120px 24px 80px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,17,14,.62) 0%,rgba(20,17,14,.42) 38%,rgba(20,17,14,.66) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:880px}
+.hero-eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:26px}
+.hero-eyebrow .eyebrow{color:#fff}
+.hero-eyebrow .dash{width:34px;height:2px;background:var(--brand)}
+.hero h1{color:#fff;font-size:clamp(46px,7vw,92px);font-weight:200;letter-spacing:-.015em;line-height:1.02;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.hero .lead{color:rgba(255,255,255,.9);margin:26px auto 0;max-width:600px;font-size:19px}
+.hero-ctas{display:flex;gap:16px;justify-content:center;margin-top:40px;flex-wrap:wrap}
+.hero-scroll{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:2;background:none;border:none;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:7px;color:rgba(255,255,255,.7);font-family:var(--font-display);
+  font-size:11px;text-transform:uppercase;letter-spacing:.22em;transition:color var(--dur-fast)}
+.hero-scroll:hover{color:#fff}
+.hero-scroll svg{width:20px;height:20px;animation:nudge 1.8s var(--ease) infinite}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* ---------- Section heading ---------- */
+.sec-head{max-width:720px}
+.sec-head h2{margin:14px 0 0}
+.sec-head .lead{margin:18px 0 0}
+.center{margin-left:auto;margin-right:auto;text-align:center}
+
+/* ---------- Services (alternating full-bleed rows) ---------- */
+.services{padding:110px 0 124px}
+.svc-rows{margin-top:80px;display:flex;flex-direction:column;gap:0}
+.svc-row{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:540px}
+.svc-media{position:relative;overflow:hidden}
+.svc-media img{width:100%;height:100%;min-height:540px;object-fit:cover;display:block}
+.svc-row.flip .svc-media{order:2}
+.svc-text{display:flex;flex-direction:column;justify-content:center;padding:80px 72px 80px max(72px,calc(50vw - 540px))}
+.svc-row.flip .svc-text{padding:80px max(72px,calc(50vw - 540px)) 80px 72px}
+.svc-ic{display:flex;align-items:center;margin-bottom:20px}
+.svc-ic svg{width:36px;height:36px;color:var(--brand);stroke-width:1.6}
+.svc-text h3{font-size:clamp(26px,2.4vw,34px);font-weight:500;line-height:1.12}
+.svc-text p{margin-top:18px;font-size:17px;line-height:1.7;color:var(--fg2);max-width:540px}
+
+/* ---------- Why MSM (full-bleed band) ---------- */
+.why{position:relative;overflow:hidden;color:#fff;padding:140px 0}
+.why-bg{position:absolute;inset:0;z-index:0}
+.why-bg img{width:100%;height:100%;object-fit:cover}
+.why-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,17,14,.86) 0%,rgba(20,17,14,.72) 46%,rgba(20,17,14,.34) 100%)}
+.why-inner{position:relative;z-index:2;max-width:660px}
+.why-inner .eyebrow{color:var(--brand)}
+.why-inner h2{color:#fff;margin-top:14px;font-size:clamp(36px,4.2vw,54px)}
+.why-inner .lead{color:rgba(255,255,255,.88);margin-top:20px}
+.why-ind{margin-top:36px}
+.why-ind-lbl{font-family:var(--font-display);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.6)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.chip{font-family:var(--font-display);font-weight:600;font-size:14px;color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:var(--r-pill);padding:9px 18px;background:rgba(255,255,255,.06)}
+
+/* ---------- Contact (over map) ---------- */
+.contact{position:relative;padding:96px 0;background:var(--linen-100)}
+.contact-map{position:absolute;inset:0;z-index:0}
+.contact-map iframe{width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.02)}
+.contact-map::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(241,235,226,.55) 0%,rgba(241,235,226,0) 60%);pointer-events:none}
+.contact-wrap{position:relative;z-index:2}
+.contact-card{background:var(--warm-850);color:#fff;border-radius:var(--r-lg);padding:48px 44px;max-width:480px;box-shadow:var(--shadow-lg)}
+.contact-card .eyebrow{color:var(--brand)}
+.contact-card h2{color:#fff;margin-top:12px;font-size:clamp(30px,3.2vw,42px)}
+.contact-card>p{color:var(--fg-inverse-2);margin-top:16px;font-size:16px;line-height:1.6}
+.cinfo{margin:28px 0 30px}
+.cinfo .detail{display:flex;gap:15px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border-dark)}
+.cinfo .detail:first-child{border-top:1px solid var(--border-dark)}
+.cinfo a.detail{transition:opacity var(--dur-fast)}
+.cinfo a.detail:hover{opacity:.8}
+.cinfo .detail svg{width:22px;height:22px;color:var(--brand);flex:none;margin-top:2px;stroke-width:1.85}
+.cinfo .detail .k{font-size:12px;color:var(--fg-inverse-2);text-transform:uppercase;letter-spacing:.12em;font-weight:600}
+.cinfo .detail .v{font-family:var(--font-mono);font-size:17px;color:#fff;margin-top:4px}
+.cinfo .detail .v.plain{font-family:var(--font-body);font-size:16px;line-height:1.4;white-space:pre-line}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--warm-950);color:var(--fg-inverse-2);padding:64px 0 30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
+.footer-logo{height:44px;margin-bottom:20px}
+.footer h5{color:#fff;font-family:var(--font-display);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:16px}
+.footer a,.footer p{font-size:15px;line-height:1.9;color:var(--fg-inverse-2)}
+.footer a:hover{color:var(--brand)}
+.footer .flist{display:flex;flex-direction:column}
+.footer-bot{margin-top:50px;padding-top:24px;border-top:1px solid var(--border-dark);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--warm-500)}
+.footer .tag{font-family:var(--font-body);max-width:300px}
+
+/* ---------- Mobile nav drawer ---------- */
 .mnav{position:fixed;inset:0;z-index:200;display:none}
 .mnav.open{display:block}
 .mnav-scrim{position:absolute;inset:0;background:rgba(28,25,22,.55);backdrop-filter:blur(3px);opacity:0;transition:opacity .3s var(--ease)}
@@ -23,6 +317,34 @@
 .mnav-links a{font-family:var(--font-display);font-weight:600;font-size:20px;color:var(--fg1);padding:14px 0;border-bottom:1px solid var(--border)}
 .mnav-links a:hover{color:var(--brand-ink)}
 .mnav .cta{margin-top:28px;justify-content:space-between}
+
+/* ---------- Reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Mobile ---------- */
+@media(max-width:920px){
+  .svc-row{grid-template-columns:1fr;min-height:0}
+  .svc-row.flip .svc-media{order:0}
+  .svc-media img{min-height:360px;max-height:440px}
+  .svc-text,.svc-row.flip .svc-text{padding:40px 32px 8px}
+  .svc-text p{max-width:none}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .contact-card{max-width:none}
+}
+@media(max-width:680px){
+  .wrap{padding:0 22px}
+  .nav,.hdr-cta .cta{display:none}
+  .menu-btn{display:flex}
+  .services{padding:80px 0 88px}
+  .svc-rows{margin-top:56px}
+  .svc-media img{min-height:300px;max-height:360px}
+  .svc-text,.svc-row.flip .svc-text{padding:32px 22px 4px}
+  .why{padding:96px 0}
+  .why-bg::after{background:linear-gradient(180deg,rgba(20,17,14,.72) 0%,rgba(20,17,14,.82) 100%)}
+  .contact-card{padding:36px 28px}
+  .footer-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -32,15 +354,290 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-<script type="text/babel" src="Icons.jsx"></script>
-<script type="text/babel" src="Header.jsx"></script>
-<script type="text/babel" src="Hero.jsx"></script>
-<script type="text/babel" src="Services.jsx"></script>
-<script type="text/babel" src="WhyMSM.jsx"></script>
-<script type="text/babel" src="Contact.jsx"></script>
-<script type="text/babel" src="Footer.jsx"></script>
-
 <script type="text/babel">
+/* ---- Icons ---- */
+const MSM_ICON_PATHS = {
+  wrench: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+  cog: '<path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
+  ruler: '<path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/>',
+  truck: '<path d="M14 18V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h2"/><path d="M14 9h4l4 4v4a1 1 0 0 1-1 1h-1"/><circle cx="7.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/>',
+  package: '<path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/>',
+  phone: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
+  mapPin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  arrowRight: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+  arrowDown: '<path d="M12 5v14"/><path d="m5 12 7 7 7-7"/>',
+  check: '<path d="M20 6 9 17l-5-5"/>',
+  menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
+  x: '<path d="M18 6 6 18M6 6l12 12"/>',
+  shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+};
+
+function Icon({ name, className, style }) {
+  return (
+    <svg className={className} style={style} xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.85"
+      strokeLinecap="round" strokeLinejoin="round"
+      dangerouslySetInnerHTML={{ __html: MSM_ICON_PATHS[name] || '' }} />
+  );
+}
+
+/* ---- Header ---- */
+function Header({ onNav, onMenu }) {
+  const [scrolled, setScrolled] = React.useState(false);
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  const link = (id, label) => (
+    <a href={'#' + id} onClick={(e) => { e.preventDefault(); onNav(id); }}>{label}</a>
+  );
+  const logo = scrolled ? '../../assets/logo/msm-mark-dark.png' : '../../assets/logo/msm-logo-light.png';
+  return (
+    <header className={'hdr' + (scrolled ? ' scrolled' : '')}>
+      <div className="wrap hdr-inner">
+        <a href="#top" className="hdr-logo-link" onClick={(e) => { e.preventDefault(); onNav('top'); }}>
+          <img className={'hdr-logo' + (scrolled ? ' is-mark' : '')} src={logo} alt="MSM — Machinery Solutions & Maintenance" />
+        </a>
+        <nav className="nav">
+          {link('services', 'What We Do')}
+          {link('why', 'Why MSM')}
+          {link('contact', 'Get In Touch')}
+        </nav>
+        <div className="hdr-cta">
+          <button className="cta cta-sm" onClick={() => onNav('contact')}>
+            <span className="lab">Get In Touch</span>
+            <span className="cap"><Icon name="arrowRight" /></span>
+          </button>
+          <button className="menu-btn" onClick={onMenu} aria-label="Menu">
+            <Icon name="menu" style={{ width: 26, height: 26 }} />
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+/* ---- Hero ---- */
+function Hero({ onNav }) {
+  return (
+    <section className="hero" id="top">
+      <div className="hero-bg">
+        <img src="../../assets/photos/banner.jpg" alt="" aria-hidden="true" />
+      </div>
+      <div className="hero-inner">
+        <div className="hero-eyebrow">
+          <span className="dash"></span>
+          <span className="eyebrow">Industrial Machinery Specialists · Melbourne</span>
+          <span className="dash"></span>
+        </div>
+        <h1>Driving your<br />production further</h1>
+        <p className="lead">
+          When a production line goes down, every minute counts. MSM keeps manufacturers
+          running with hands-on breakdown response, preventative maintenance, and custom
+          machine design &amp; build.
+        </p>
+        <div className="hero-ctas">
+          <button className="cta" onClick={() => onNav('contact')}>
+            <span className="lab">Get In Touch</span>
+            <span className="cap"><Icon name="arrowRight" /></span>
+          </button>
+          <button className="btn btn-ghost-light" onClick={() => onNav('services')}>What We Do</button>
+        </div>
+      </div>
+      <button className="hero-scroll" onClick={() => onNav('intro')} aria-label="Scroll to services">
+        <span>Scroll</span>
+        <Icon name="arrowDown" />
+      </button>
+    </section>
+  );
+}
+
+/* ---- Services ---- */
+const MSM_SERVICES = [
+  {
+    n: '01', icon: 'wrench', title: 'Machinery Breakdown Service',
+    photo: 'machinery-breakdown-service.jpg',
+    body: 'We are on call to help you get back online and minimise your production down time, with our experience and expertise in mechanical, electrical, pneumatic and hydraulic systems.',
+  },
+  {
+    n: '02', icon: 'shield', title: 'Periodical Preventative Maintenance',
+    photo: 'periodical-preventative-maintenance.jpg',
+    body: 'We can put in place a tailor-made maintenance plan designed to suit your company’s needs, resulting in reduced down time and preventing costly and time-consuming breakdowns.',
+  },
+  {
+    n: '03', icon: 'ruler', title: 'Design & Development',
+    photo: 'cad-design-development.jpg',
+    body: 'Using 3D modelling and CAD software, we have the ability to design just about anything from one-off parts to full assemblies. This includes complete machine builds from concept through to fabrication, redesign of components already on your machine to improve operation and accuracy, and retro-fitting add-on components to improve your capabilities and work flow — as well as OH&S upgrades, one-off parts and even prototyping.',
+  },
+  {
+    n: '04', icon: 'truck', title: 'Installation, Commissioning & Relocation',
+    photo: 'machinery-installation.jpg',
+    body: 'Just bought a machine, or looking to relocate your existing machines to a new location within your factory to optimise floor space and production? With effective planning to minimise down time, we at MSM do it with ease — providing all the necessary services such as floor-plan layouts, power requirements and the lifting equipment needed.',
+  },
+  {
+    n: '05', icon: 'package', title: 'Spare Parts',
+    photo: 'spare-parts.jpg',
+    body: 'Using our local and world-wide network of suppliers, we can source the components and consumables that are needed to keep your business running at maximum efficiency.',
+  },
+];
+
+function ServiceRow({ s, flip }) {
+  return (
+    <div className={'svc-row' + (flip ? ' flip' : '')}>
+      <div className="svc-media">
+        <img src={'../../assets/photos/' + s.photo} alt={s.title} loading="lazy" />
+      </div>
+      <div className="svc-text">
+        <div className="svc-ic"><Icon name={s.icon} /></div>
+        <h3>{s.title}</h3>
+        <p>{s.body}</p>
+      </div>
+    </div>
+  );
+}
+
+function Services() {
+  return (
+    <section className="services" id="services">
+      <div className="wrap">
+        <div className="sec-head center" id="intro">
+          <span className="eyebrow">What We Do</span>
+          <h2>High-quality service across the<br />manufacturing industry</h2>
+          <p className="lead">At Machinery Solutions &amp; Maintenance, our aim is to provide
+            high-quality services for our clients in every field of the manufacturing industry.</p>
+        </div>
+      </div>
+      <div className="svc-rows">
+        {MSM_SERVICES.map((s, i) => <ServiceRow key={s.n} s={s} flip={i % 2 === 1} />)}
+      </div>
+    </section>
+  );
+}
+
+/* ---- Why MSM ---- */
+function WhyMSM() {
+  const industries = ['Printing', 'Packaging', 'Furniture', 'Timber'];
+  return (
+    <section className="why" id="why">
+      <div className="why-bg">
+        <img src="../../assets/photos/why-msm.jpg" alt="" aria-hidden="true" />
+      </div>
+      <div className="wrap why-inner">
+        <span className="eyebrow">Why MSM</span>
+        <h2>A history of excellence</h2>
+        <p className="lead">
+          Machinery Solutions &amp; Maintenance has established a history of excellence. Our
+          specialised staff are exceedingly gifted and dedicated to help you recognise your
+          company&rsquo;s equipment servicing demands.
+        </p>
+        <div className="why-ind">
+          <span className="why-ind-lbl">Experience across</span>
+          <div className="chips">
+            {industries.map((i) => <span className="chip" key={i}>{i}</span>)}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---- Contact ---- */
+function Contact() {
+  const mapEmbed = 'https://maps.google.com/maps?q=25A%20Slater%20Parade%2C%20Keilor%20East%20VIC%203033&t=&z=15&ie=UTF8&iwloc=&output=embed';
+  const directions = 'https://www.google.com/maps/dir/?api=1&destination=25A+Slater+Parade+Keilor+East+VIC+3033';
+  const details = [
+    { icon: 'phone', k: 'Call us', v: '(+613) 9013 3772', href: 'tel:+61390133772', mono: true },
+    { icon: 'mapPin', k: 'Visit us', v: '25A Slater Parade,\nKeilor East 3033', mono: false },
+    { icon: 'clock', k: 'Hours', v: 'Mon–Fri 7:00–17:00', mono: false },
+  ];
+  return (
+    <section className="contact" id="contact">
+      <div className="contact-map">
+        <iframe title="MSM location — 25A Slater Parade, Keilor East" src={mapEmbed}
+          loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div className="wrap contact-wrap">
+        <div className="contact-card">
+          <span className="eyebrow">Get In Touch</span>
+          <h2>Let&rsquo;s talk about<br />your machinery</h2>
+          <p>Find out more about our services — our friendly team members are always happy to talk.</p>
+          <div className="cinfo">
+            {details.map((d) => (
+              d.href ? (
+                <a className="detail" href={d.href} key={d.k}>
+                  <Icon name={d.icon} />
+                  <div>
+                    <div className="k">{d.k}</div>
+                    <div className={'v' + (d.mono ? '' : ' plain')}>{d.v}</div>
+                  </div>
+                </a>
+              ) : (
+                <div className="detail" key={d.k}>
+                  <Icon name={d.icon} />
+                  <div>
+                    <div className="k">{d.k}</div>
+                    <div className={'v' + (d.mono ? '' : ' plain')}>{d.v}</div>
+                  </div>
+                </div>
+              )
+            ))}
+          </div>
+          <a className="cta" href={directions} target="_blank" rel="noopener">
+            <span className="lab">Get Directions</span>
+            <span className="cap"><Icon name="arrowRight" /></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---- Footer ---- */
+function Footer({ onNav }) {
+  const link = (id, label) => (
+    <a href={'#' + id} onClick={(e) => { e.preventDefault(); onNav(id); }}>{label}</a>
+  );
+  return (
+    <footer className="footer">
+      <div className="wrap">
+        <div className="footer-grid">
+          <div>
+            <img className="footer-logo" src="../../assets/logo/msm-logo-light.png" alt="MSM — Machinery Solutions & Maintenance" />
+            <p className="tag">Driving your production further. Industrial machinery
+              service, maintenance, design &amp; build — Melbourne, Australia.</p>
+          </div>
+          <div>
+            <h5>Services</h5>
+            <div className="flist">
+              {link('services', 'Machinery Breakdown')}
+              {link('services', 'Preventative Maintenance')}
+              {link('services', 'Design & Development')}
+              {link('services', 'Installation & Relocation')}
+              {link('services', 'Spare Parts')}
+            </div>
+          </div>
+          <div>
+            <h5>Get In Touch</h5>
+            <div className="flist">
+              <a href="tel:+61390133772" className="mono">(+613) 9013 3772</a>
+              <p>25A Slater Parade,<br />Keilor East 3033</p>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); onNav('contact'); }}>Get Directions</a>
+            </div>
+          </div>
+        </div>
+        <div className="footer-bot">
+          <span>&copy; Machinery Solutions &amp; Maintenance 2026</span>
+          <span className="wordmark" style={{ fontSize: 12, letterSpacing: '.2em' }}>MSM</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+/* ---- Mobile Nav Drawer ---- */
 function MobileNav({ open, onClose, onNav }) {
   const go = (id) => { onClose(); setTimeout(() => onNav(id), 60); };
   const link = (id, label) => (
@@ -52,7 +649,9 @@ function MobileNav({ open, onClose, onNav }) {
       <div className="mnav-panel">
         <div className="mnav-top">
           <img src="../../assets/logo/msm-logo-dark.png" alt="MSM" />
-          <button className="mnav-close" onClick={onClose} aria-label="Close"><Icon name="x" style={{ width: 26, height: 26 }} /></button>
+          <button className="mnav-close" onClick={onClose} aria-label="Close">
+            <Icon name="x" style={{ width: 26, height: 26 }} />
+          </button>
         </div>
         <div className="mnav-links">
           {link('services', 'What We Do')}
@@ -68,24 +667,34 @@ function MobileNav({ open, onClose, onNav }) {
   );
 }
 
+/* ---- Reveal on scroll hook ---- */
 function useReveal() {
   React.useEffect(() => {
     const els = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
     }, { threshold: 0.12 });
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
   });
 }
 
+/* ---- App ---- */
 function App() {
   const [menu, setMenu] = React.useState(false);
   useReveal();
+
   const nav = (id) => {
-    const el = document.getElementById(id === 'top' ? 'top' : id);
-    if (el) window.scrollTo({ top: id === 'top' ? 0 : el.getBoundingClientRect().top + window.scrollY - 84, behavior: 'smooth' });
+    if (id === 'top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const el = document.getElementById(id);
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 84, behavior: 'smooth' });
+    }
   };
+
   return (
     <React.Fragment>
       <Header onNav={nav} onMenu={() => setMenu(true)} />
