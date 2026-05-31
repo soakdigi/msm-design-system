@@ -250,8 +250,8 @@ a{color:inherit;text-decoration:none}
 .svc-media{position:relative;overflow:hidden}
 .svc-media img{width:100%;height:100%;min-height:540px;object-fit:cover;display:block}
 .svc-row.flip .svc-media{order:2}
-.svc-text{display:flex;flex-direction:column;justify-content:center;padding:80px 72px 80px max(72px,calc(50vw - 540px))}
-.svc-row.flip .svc-text{padding:80px max(72px,calc(50vw - 540px)) 80px 72px}
+.svc-text{display:flex;flex-direction:column;justify-content:center;padding:80px max(72px,calc(50vw - 540px)) 80px 72px}
+.svc-row.flip .svc-text{padding:80px 72px 80px max(72px,calc(50vw - 540px))}
 .svc-ic{display:flex;align-items:center;margin-bottom:20px}
 .svc-ic svg{width:36px;height:36px;color:var(--brand);stroke-width:1.6}
 .svc-text h3{font-size:clamp(26px,2.4vw,34px);font-weight:500;line-height:1.12}
@@ -519,7 +519,7 @@ function Services() {
 
 /* ---- Why MSM ---- */
 function WhyMSM() {
-  const industries = ['Printing', 'Packaging', 'Furniture', 'Timber'];
+  const industries = ['Printing', 'Packaging', 'Food & Beverage', 'Pharmaceutical', 'Labels & Converting'];
   return (
     <section className="why" id="why">
       <div className="why-bg">
