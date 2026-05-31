@@ -250,8 +250,8 @@ a{color:inherit;text-decoration:none}
 .svc-media{position:relative;overflow:hidden}
 .svc-media img{width:100%;height:100%;min-height:540px;object-fit:cover;display:block}
 .svc-row.flip .svc-media{order:2}
-.svc-text{display:flex;flex-direction:column;justify-content:center;padding:80px max(72px,calc(50vw - 540px)) 80px 72px}
-.svc-row.flip .svc-text{padding:80px 72px 80px max(72px,calc(50vw - 540px))}
+.svc-text{display:flex;flex-direction:column;justify-content:center;padding:80px clamp(56px,7%,96px)}
+.svc-row.flip .svc-text{padding:80px clamp(56px,7%,96px)}
 .svc-ic{display:flex;align-items:center;margin-bottom:20px}
 .svc-ic svg{width:36px;height:36px;color:var(--brand);stroke-width:1.6}
 .svc-text h3{font-size:clamp(26px,2.4vw,34px);font-weight:500;line-height:1.12}
@@ -322,12 +322,20 @@ a{color:inherit;text-decoration:none}
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
 .reveal.in{opacity:1;transform:none}
 
+/* ---------- Service row stagger ---------- */
+.svc-row .svc-media,.svc-row .svc-text{opacity:0;transform:translateY(32px);transition:opacity .65s var(--ease-out),transform .65s var(--ease-out)}
+.svc-row.in .svc-media{opacity:1;transform:none;transition-delay:.05s}
+.svc-row.in .svc-text{opacity:1;transform:none;transition-delay:.2s}
+
+/* ---------- Parallax ---------- */
+.hero-bg img,.why-bg img{will-change:transform}
+
 /* ---------- Mobile ---------- */
 @media(max-width:920px){
-  .svc-row{grid-template-columns:1fr;min-height:0}
+  .svc-row{grid-template-columns:1fr;min-height:0;border-bottom:1px solid var(--border)}
   .svc-row.flip .svc-media{order:0}
   .svc-media img{min-height:360px;max-height:440px}
-  .svc-text,.svc-row.flip .svc-text{padding:40px 32px 8px}
+  .svc-text,.svc-row.flip .svc-text{padding:40px 32px 52px}
   .svc-text p{max-width:none}
   .footer-grid{grid-template-columns:1fr 1fr}
   .contact-card{max-width:none}
@@ -667,17 +675,54 @@ function MobileNav({ open, onClose, onNav }) {
   );
 }
 
-/* ---- Reveal on scroll hook ---- */
+/* ---- Reveal + stagger + parallax ---- */
 function useReveal() {
   React.useEffect(() => {
-    const els = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
+    // Section reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealIO = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); }
       });
     }, { threshold: 0.12 });
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    revealEls.forEach((el) => revealIO.observe(el));
+
+    // Service row stagger — each row triggers independently
+    const rows = document.querySelectorAll('.svc-row');
+    const rowIO = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('in'); rowIO.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    rows.forEach((r) => rowIO.observe(r));
+
+    // Parallax on hero and why-msm backgrounds
+    const parallaxEls = [
+      { img: document.querySelector('.hero-bg img'),  speed: 0.35 },
+      { img: document.querySelector('.why-bg img'),   speed: 0.28 },
+    ];
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        parallaxEls.forEach(({ img, speed }) => {
+          if (!img) return;
+          const rect = img.closest('section').getBoundingClientRect();
+          const offset = -(rect.top * speed);
+          img.style.transform = `translateY(${offset}px) scale(1.12)`;
+        });
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    return () => {
+      revealIO.disconnect();
+      rowIO.disconnect();
+      window.removeEventListener('scroll', onScroll);
+    };
   });
 }
 
